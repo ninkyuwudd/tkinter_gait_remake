@@ -11,7 +11,7 @@ def show_image_on_tkinter(root,mfei_res_id, image_array):
 
 
     lbl_frame = ttk.Labelframe(root,text="MFEI Result")
-    lbl_frame.grid(row=2,column=1,padx=10,pady=10)
+    lbl_frame.pack(side="right",padx=10,pady=10)
     mfei_res_id.set(lbl_frame)
 
 
@@ -28,7 +28,7 @@ def show_image_on_tkinter(root,mfei_res_id, image_array):
     # Tampilkan gambar di tkinter menggunakan Label
     label = Label(lbl_frame, image=photo)
     label.image = photo  # Simpan referensi agar gambar tidak hilang
-    label.grid()
+    label.pack()
   
 
 

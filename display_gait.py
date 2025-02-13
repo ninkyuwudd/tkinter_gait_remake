@@ -53,7 +53,7 @@ def display_video(root, canvas_id,frame_folder,frame_input_file_idx):
 
     # lbl_frame = Labelframe(root,text="Input Gait")
     lbl_frame = CTkFrame(root,corner_radius=10)
-    lbl_frame.pack(padx=10, pady=10)
+    lbl_frame.pack(side=LEFT,padx=10, pady=10,expand=True,fill="both")
     canvas_id.set(lbl_frame)
 
 
@@ -111,7 +111,7 @@ def show_ndarray_animation(aligned_frames,root,gr_animated_id):
         # label.grid(row=1,column=0) 
 
     lbl_frame = ttk.Labelframe(root,text="After Normalization")
-    lbl_frame.grid(row=2,column=0,padx=10,pady=10)
+    lbl_frame.pack(side=LEFT,padx=10,pady=10)
     gr_animated_id.set(lbl_frame)
 
     
@@ -121,7 +121,7 @@ def show_ndarray_animation(aligned_frames,root,gr_animated_id):
     # Membuat canvas dengan ukuran sesuai frame
     canvas = tk.Canvas(lbl_frame, width=frame_width, height=frame_height)
     # lbl_frame.add(canvas)
-    canvas.grid()
+    canvas.pack()
     
     # Menampilkan animasi
     display_ndarray_frames_in_sequence(lbl_frame, canvas, aligned_frames, delay=35)
