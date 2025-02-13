@@ -39,14 +39,14 @@ def main():
 
 
     # Upload sequence data dari folder kita dan menampilkan animasi gaya berjalan
-    create_directory_button(right_top_frmae, right_middle_frmae,canvas_id,mfei_res_id,"Choose Directory",frame_input_file_idx,gr_animated_id,label_id)
+    create_directory_button(right_top_frmae, right_middle_frmae,right_frmae,canvas_id,mfei_res_id,"Choose Directory",frame_input_file_idx,gr_animated_id,label_id)
 
 
         # Memproses data yang sudah di upload
     executeProccess(left_frmae,right_frmae,right_middle_frmae,mfei_res_id,label_id,gr_animated_id)
 
         # menghapus data folder yang sudah di upload
-    remove_folder(left_frmae,right_frmae,canvas_id, "uploads", mfei_res_id,gr_animated_id,label_id)
+    remove_folder(left_frmae,right_frmae,right_middle_frmae,canvas_id, "uploads", mfei_res_id,gr_animated_id,label_id)
 
 
   

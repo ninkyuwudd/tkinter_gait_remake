@@ -36,7 +36,7 @@ def remove_and_clear_display_gait(root,widget_id):
 
 
 
-def create_directory_button(root,second_root, canvas_id,mfei_res_id,text,frame_input_file_idx,gr_animated_id,label_id):
+def create_directory_button(root,second_root,righ_frame, canvas_id,mfei_res_id,text,frame_input_file_idx,gr_animated_id,label_id):
     path_frame = CTkEntry(root, width=450, placeholder_text="Enter the path of the folder")
     path_frame.pack(side=LEFT,pady=10,padx=10)
     def choose_directory():
@@ -47,9 +47,9 @@ def create_directory_button(root,second_root, canvas_id,mfei_res_id,text,frame_i
         # menghapus canvas yang sudah ada
         remove_and_clear_display_gait(second_root,canvas_id.get())
 
-        remove_and_clear_display_gait(second_root,mfei_res_id.get())
+        remove_and_clear_display_gait(righ_frame,mfei_res_id.get())
 
-        remove_and_clear_display_gait(second_root,gr_animated_id.get())
+        remove_and_clear_display_gait(righ_frame,gr_animated_id.get())
         
 
         # mengecek direktory secara keseluruhan
@@ -95,12 +95,12 @@ def create_directory_button(root,second_root, canvas_id,mfei_res_id,text,frame_i
     return path_button_frame
 
 
-def remove_folder(root,display_root,canvas_id,folder_path, mfei_res_id,gr_animated_id,label_id):
+def remove_folder(root,display_root,right_middle_frmae,canvas_id,folder_path, mfei_res_id,gr_animated_id,label_id):
     def remove():
 
         stop_animation()
-        remove_and_clear_display_gait(display_root,label_id.get())        
-        remove_and_clear_display_gait(display_root,canvas_id.get())
+        remove_and_clear_display_gait(right_middle_frmae,label_id.get())        
+        remove_and_clear_display_gait(right_middle_frmae,canvas_id.get())
         remove_and_clear_display_gait(display_root,mfei_res_id.get())
         remove_and_clear_display_gait(display_root,gr_animated_id.get())
 
