@@ -56,6 +56,9 @@ def display_video(root, canvas_id,frame_folder,frame_input_file_idx):
     lbl_frame.pack(side=LEFT,padx=10, pady=10,expand=True,fill="both")
     canvas_id.set(lbl_frame)
 
+    lbl_title = CTkLabel(lbl_frame, text="Input Gait", font=("Helvetica", 15))
+    lbl_title.pack(padx=10,pady=10)
+
 
 
     first_frame = cv2.imread(os.path.join(frame_folder, sorted(os.listdir(frame_folder))[0]))
@@ -110,9 +113,12 @@ def show_ndarray_animation(aligned_frames,root,gr_animated_id):
         #     label = ttk.Label(result_root, text="", font=("Helvetica", 10))
         # label.grid(row=1,column=0) 
 
-    lbl_frame = ttk.Labelframe(root,text="After Normalization")
-    lbl_frame.pack(side=LEFT,padx=10,pady=10)
+    lbl_frame = CTkFrame(root)
+    lbl_frame.pack(side=LEFT,padx=10,pady=10,expand=True,fill="both")
     gr_animated_id.set(lbl_frame)
+
+    lbl_title = CTkLabel(lbl_frame, text="After Normalization", font=("Helvetica", 15))
+    lbl_title.pack(padx=10,pady=10)
 
     
     # Asumsi semua frame memiliki ukuran yang sama

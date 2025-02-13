@@ -15,12 +15,14 @@ from utils.custom_label import custom_label
 
 
 
-def custom_progress_bar(root,text,label_id):
+def custom_progress_bar(root,text,label_id,image_total,execution_time):
     lbl_frame_result = CTkFrame(root,corner_radius=10)
     lbl_frame_result.pack(side="right",padx=10,pady=10,expand=True,fill="both")
     label_id.set(lbl_frame_result)
     title_label = CTkLabel(lbl_frame_result, text="Recognition Result", font=("Helvetica", 15))
     title_label.pack(padx=10,pady=10)
+
+    
 
 
     style = ttk.Style()
@@ -46,6 +48,12 @@ def custom_progress_bar(root,text,label_id):
         # duration_value = "Duration: {:.2f} seconds".format(time)
         # duration = ttk.Label(lbl_frame_result, text=duration_value, font=("Helvetica", 10))
         # duration.grid(pady=10)
+        total_image_label = CTkLabel(lbl_frame_result, text=f"Total Frame: {image_total}", font=("Helvetica", 12))
+        total_image_label.pack(padx=10, pady=10)
+
+        duration_label = CTkLabel(lbl_frame_result, text=f"Duration: {execution_time:.2f} seconds", font=("Helvetica", 12))
+        duration_label.pack(padx=10, pady=10)
+
         container = CTkFrame(lbl_frame_result,corner_radius=10)
         container.pack(padx=10, pady=10)
         container_label = CTkLabel(container, text=text, text_color="green",font=("Helvetica", 15))

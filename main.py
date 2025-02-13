@@ -49,16 +49,10 @@ def main():
     remove_folder(left_frmae,right_frmae,canvas_id, "uploads", mfei_res_id,gr_animated_id,label_id)
 
 
-    # # Create a custom button
-    # button = CTkButton(left_frmae, text="")
-    # button.pack(pady=5,padx=10)
+  
 
-    # # Create a custom label
-    # label = CTkButton(left_frmae, text="Hello, World!")
-    # label.pack(pady=5,padx=10)
-
-    # label = CTkButton(left_frmae, text="Hello, World!")
-    # label.pack(pady=5,padx=10)
+    created_by_label = CTkLabel(left_frmae, text="Created By Reihan Wudd H", font=("Helvetica", 10))
+    created_by_label.pack(side=BOTTOM,pady=2)
 
  
 

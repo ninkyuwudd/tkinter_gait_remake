@@ -26,8 +26,9 @@ def executeProccess(root,result_root,middle_frame,mfei_res_id,label_id,gr_animat
         
 
         # check_and_remove_widget(root, label_id.get())
-        
+        start_time = time.time()  # Catat waktu mulai
         load_images = load_images_from_folder("uploads")
+        image_total = len(load_images)
         normalize= normalize_silhouettes(load_images)
         
         mfei = execute_mfei(normalize)
@@ -45,8 +46,11 @@ def executeProccess(root,result_root,middle_frame,mfei_res_id,label_id,gr_animat
             print(f"Tidak ada data yang diproses")
         result = clasification_data()
 
+        end_time = time.time()  # Catat waktu selesai
+        execution_time = end_time - start_time
+
         show_ndarray_animation(normalize,result_root,gr_animated_id)
-        custom_progress_bar(middle_frame,result,label_id)
+        custom_progress_bar(middle_frame,result,label_id,image_total,execution_time)
         show_image_on_tkinter(result_root,mfei_res_id, mfei)
          
         print(result)
