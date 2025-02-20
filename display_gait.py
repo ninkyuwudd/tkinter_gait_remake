@@ -131,3 +131,12 @@ def show_ndarray_animation(aligned_frames,root,gr_animated_id):
     
     # Menampilkan animasi
     display_ndarray_frames_in_sequence(lbl_frame, canvas, aligned_frames, delay=35)
+
+
+def move_to_about_page(left_frame,right_frame,middle_frame,top_frame,about_page):
+    left_frame.destroy()
+    right_frame.destroy()
+    middle_frame.destroy()
+    top_frame.destroy()
+    about_page.pack(fill=BOTH,expand=True)
+    

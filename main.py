@@ -3,19 +3,23 @@ import tkinter as tk
 from input_ouput_handle import *
 from execute import executeProccess
 from input_ouput_handle import *
+from display_gait import *
+from presentation.about.about_page import *
 
 
 
 def main():
     root = CTk()
     root.title("Gait Recognition")
-    root.geometry("800x550")
+    root.geometry("800x580")
     # root.resizable(False, False)
+
+    about_page = CTkFrame(root,corner_radius=10, fg_color="transparent")
+    
 
     left_frmae = CTkFrame(root)
     left_frmae.pack(side=LEFT, fill=BOTH)
 
-    
     right_top_frmae = CTkFrame(root,corner_radius=10, fg_color="transparent")
     right_top_frmae.pack(side=TOP, fill=BOTH)
 
@@ -38,6 +42,8 @@ def main():
     menu_label.pack(pady=2)
 
 
+    show_about_page(about_page)
+
     # Upload sequence data dari folder kita dan menampilkan animasi gaya berjalan
     create_directory_button(right_top_frmae, right_middle_frmae,right_frmae,canvas_id,mfei_res_id,"Choose Directory",frame_input_file_idx,gr_animated_id,label_id)
 
@@ -48,11 +54,20 @@ def main():
         # menghapus data folder yang sudah di upload
     remove_folder(left_frmae,right_frmae,right_middle_frmae,canvas_id, "uploads", mfei_res_id,gr_animated_id,label_id)
 
+    method_label = CTkLabel(left_frmae, text="Method", font=("Helvetica", 13))
+    method_label.pack(pady=2)
 
-  
+    
+    dropdown_method = CTkComboBox(left_frmae,values=["MFEI","GGMI"],font=("Helvetica", 13))
+    dropdown_method.pack(pady=2,padx=10,)
+
+
 
     created_by_label = CTkLabel(left_frmae, text="Created By Reihan Wudd H", font=("Helvetica", 10))
     created_by_label.pack(side=BOTTOM,pady=2)
+
+    about_method_button = CTkButton(left_frmae, text="About Method", font=("Helvetica", 10),command=lambda: move_to_about_page(left_frmae,right_frmae,right_middle_frmae,right_top_frmae,about_page))
+    about_method_button.pack(side=BOTTOM,pady=2)
 
  
 
