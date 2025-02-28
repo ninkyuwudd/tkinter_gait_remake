@@ -1,9 +1,12 @@
 from customtkinter import *
 from presentation.about.left_page import *
 from tkinter import * 
+from presentation.about.component.card_content import *
 
 
-def show_about_page(about_page_root):
+def show_about_page(about_page_root,left_frmae,right_top_frmae,right_frmae,right_middle_frmae):
+
+    
 
 
     left_frame = CTkFrame(about_page_root,corner_radius=10, fg_color="transparent")
@@ -39,11 +42,21 @@ def show_about_page(about_page_root):
     tab_clv_1 = right_child_clv_frame.add("K-NN")
     tab_clv_2 = right_child_clv_frame.add("SVM")
 
+
+
+
+
+
     
+    left_page_display(left_frame,left_child_frame,left_frmae,right_top_frmae,right_frmae,about_page_root,right_middle_frmae)
+    card_method_content(tab_gr_1,"MFEI","Motion Flow Energy Image","Motion Flow Energy Image (MFEI) adalah metode ekstraksi fitur yang digunakan untuk mengidentifikasi objek dalam gambar atau video. HOG menghitung gradien arah dan magnitudo dari piksel dalam gambar. HOG digunakan dalam berbagai aplikasi penglihatan komputer, seperti deteksi wajah, deteksi orang, dan pengenalan karakter.")
+    card_method_content(tab_gr_2,"GGMI","Gait Gradient Magnitude Image","Gait Gradient Magnitude Image (GGMI) adalah metode ekstraksi fitur yang digunakan untuk mengidentifikasi objek dalam gambar atau video. HOG menghitung gradien arah dan magnitudo dari piksel dalam gambar. HOG digunakan dalam berbagai aplikasi penglihatan komputer, seperti deteksi wajah, deteksi orang, dan pengenalan karakter.")
 
+    card_method_content(tab_fe_1,"HOG","Support Vector Machine","Histogram of Oriented Gradient (HOG) adalah metode ekstraksi fitur yang digunakan untuk mengidentifikasi objek dalam gambar atau video. HOG menghitung gradien arah dan magnitudo dari piksel dalam gambar. HOG digunakan dalam berbagai aplikasi penglihatan komputer, seperti deteksi wajah, deteksi orang, dan pengenalan karakter.")
+    card_method_content(tab_fe_2,"GLCM","Gray Level Co-Occurance Matrix","Gray Level Co-Occurance Matrix (GLCM) adalah metode ekstraksi fitur yang digunakan untuk mengidentifikasi objek dalam gambar atau video. HOG menghitung gradien arah dan magnitudo dari piksel dalam gambar. HOG digunakan dalam berbagai aplikasi penglihatan komputer, seperti deteksi wajah, deteksi orang, dan pengenalan karakter.")
 
-
-    left_page_display(left_frame,left_child_frame)
+    card_method_content(tab_clv_1,"K-NN","K-Nearest Neighbour","K-Nearest Neighbour (K-NN) adalah metode ekstraksi fitur yang digunakan untuk mengidentifikasi objek dalam gambar atau video. HOG menghitung gradien arah dan magnitudo dari piksel dalam gambar. HOG digunakan dalam berbagai aplikasi penglihatan komputer, seperti deteksi wajah, deteksi orang, dan pengenalan karakter.")
+    card_method_content(tab_clv_2,"SVM","Support Vector Machine","Support Vector Machine (SVM) adalah metode ekstraksi fitur yang digunakan untuk mengidentifikasi objek dalam gambar atau video. HOG menghitung gradien arah dan magnitudo dari piksel dalam gambar. HOG digunakan dalam berbagai aplikasi penglihatan komputer, seperti deteksi wajah, deteksi orang, dan pengenalan karakter.")
 
 
     

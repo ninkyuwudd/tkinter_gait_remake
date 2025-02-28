@@ -134,9 +134,9 @@ def show_ndarray_animation(aligned_frames,root,gr_animated_id):
 
 
 def move_to_about_page(left_frame,right_frame,middle_frame,top_frame,about_page):
-    left_frame.destroy()
-    right_frame.destroy()
-    middle_frame.destroy()
-    top_frame.destroy()
+    left_frame.pack_forget()
+    right_frame.pack_forget()
+    middle_frame.pack_forget()
+    top_frame.pack_forget()
     about_page.pack(fill=BOTH,expand=True)
     

@@ -6,9 +6,10 @@ from display_gait import show_ndarray_animation
 from input_ouput_handle import load_images_from_folder, remove_folder
 
 import pandas as pd
-
+from customtkinter import *
 from method.method_hog import compute_hog
 from method.method_mfei import execute_mfei
+from method.method_ggmi import newGGMIcalculated
 from method.method_pre_processing import normalize_silhouettes
 from method.method_svc import clasification_data
 from utils.custom_button import CustomButton
@@ -22,6 +23,13 @@ from utils.widget_check_remover import check_and_remove_widget
 
 
 def executeProccess(root,result_root,middle_frame,mfei_res_id,label_id,gr_animated_id):
+    method_label = CTkLabel(root, text="Method", font=("Helvetica", 13))
+    method_label.pack(pady=2)
+    dropdown_method = CTkComboBox(root,values=["MFEI","GGMI"],font=("Helvetica", 13))
+    dropdown_method.pack(pady=2,padx=10,)
+    menu_label = CTkLabel(root, text="Menu", font=("Helvetica", 13))
+    menu_label.pack(pady=2)
+
     def runProggram():
         
 
@@ -30,8 +38,11 @@ def executeProccess(root,result_root,middle_frame,mfei_res_id,label_id,gr_animat
         load_images = load_images_from_folder("uploads")
         image_total = len(load_images)
         normalize= normalize_silhouettes(load_images)
-        
-        mfei = execute_mfei(normalize)
+        if(dropdown_method.get() == "MFEI"):
+            print("this is from mfei")
+            mfei = execute_mfei(normalize)
+        else:
+            mfei = newGGMIcalculated(normalize)
        
         hog = compute_hog(mfei)    
         faltten_hog = np.array(hog).flatten()

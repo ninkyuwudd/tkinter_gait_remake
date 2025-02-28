@@ -35,33 +35,24 @@ def main():
     mfei_res_id = tk.StringVar()
     gr_animated_id = tk.StringVar()
     frame_input_file_idx = 0
+    selected_method = "MFEI"
+    
 
- 
+  
 
-    menu_label = CTkLabel(left_frmae, text="Menu", font=("Helvetica", 13))
-    menu_label.pack(pady=2)
-
-
-    show_about_page(about_page)
+    show_about_page(about_page,left_frmae,right_top_frmae,right_frmae,right_middle_frmae)
 
     # Upload sequence data dari folder kita dan menampilkan animasi gaya berjalan
     create_directory_button(right_top_frmae, right_middle_frmae,right_frmae,canvas_id,mfei_res_id,"Choose Directory",frame_input_file_idx,gr_animated_id,label_id)
-
-
+    
+    
         # Memproses data yang sudah di upload
     executeProccess(left_frmae,right_frmae,right_middle_frmae,mfei_res_id,label_id,gr_animated_id)
 
         # menghapus data folder yang sudah di upload
     remove_folder(left_frmae,right_frmae,right_middle_frmae,canvas_id, "uploads", mfei_res_id,gr_animated_id,label_id)
 
-    method_label = CTkLabel(left_frmae, text="Method", font=("Helvetica", 13))
-    method_label.pack(pady=2)
-
     
-    dropdown_method = CTkComboBox(left_frmae,values=["MFEI","GGMI"],font=("Helvetica", 13))
-    dropdown_method.pack(pady=2,padx=10,)
-
-
 
     created_by_label = CTkLabel(left_frmae, text="Created By Reihan Wudd H", font=("Helvetica", 10))
     created_by_label.pack(side=BOTTOM,pady=2)
@@ -69,10 +60,11 @@ def main():
     about_method_button = CTkButton(left_frmae, text="About Method", font=("Helvetica", 10),command=lambda: move_to_about_page(left_frmae,right_frmae,right_middle_frmae,right_top_frmae,about_page))
     about_method_button.pack(side=BOTTOM,pady=2)
 
- 
 
     root.mainloop()
 
 
 if __name__ == "__main__":
     main()
+
+
