@@ -79,11 +79,6 @@ def display_ndarray_frames_in_sequence(root, canvas, frames, delay=33):
     """
     Menampilkan urutan frame pada canvas sebagai animasi.
     
-    Args:
-        root: Tkinter root window.
-        canvas: Tkinter Canvas widget.
-        frames: List of numpy.ndarray (grayscale images).
-        delay: Waktu delay antar frame dalam milidetik (default 100 ms).
     """
     idx = 0
     def update_frame():
